@@ -21,11 +21,11 @@ function removeFile(FilePath) {
 router.get("/", async (req, res) => {
   let num = req.query.number;
 
-  async function RobinPair() {
+  async function Anuga-Senithu() {
     const { state, saveCreds } = await useMultiFileAuthState("./session");
 
     try {
-      let RobinPairWeb = makeWASocket({
+      let Anuga-Senithu = makeWASocket({
         auth: {
           creds: state.creds,
           keys: makeCacheableSignalKeyStore(
@@ -38,18 +38,18 @@ router.get("/", async (req, res) => {
         browser: Browsers.macOS("Safari"),
       });
 
-      if (!RobinPairWeb.authState.creds.registered) {
+      if (!Anuga-Senithu.authState.creds.registered) {
         await delay(1500);
         num = num.replace(/[^0-9]/g, "");
-        const code = await RobinPairWeb.requestPairingCode(num);
+        const code = await Anuga-Senithu.requestPairingCode(num);
         if (!res.headersSent) {
           await res.send({ code });
         }
       }
 
-      RobinPairWeb.ev.on("creds.update", saveCreds);
+      Anuga-Senithu.ev.on("creds.update", saveCreds);
 
-      RobinPairWeb.ev.on("connection.update", async (s) => {
+      Anuga-Senithu.ev.on("connection.update", async (s) => {
         const { connection, lastDisconnect } = s;
         if (connection === "open") {
           try {
@@ -57,7 +57,7 @@ router.get("/", async (req, res) => {
             const sessionPrabath = fs.readFileSync("./session/creds.json");
 
             const auth_path = "./session/";
-            const user_jid = jidNormalizedUser(RobinPairWeb.user.id);
+            const user_jid = jidNormalizedUser(anugasenithu.user.id);
 
             function randomMegaId(length = 6, numberLength = 4) {
               const characters =
@@ -86,22 +86,22 @@ router.get("/", async (req, res) => {
             );
 
             // Wrap multi-line strings with backticks, and escape backslash in config.js path
-            const sid = `*✅ MAHII-MD Session Connected Successfully!*\n\n🔐 *Session ID:* \n👉 ${string_session} 👈\n\n📌 *Please copy and paste this Session ID into your* \\config.js\\ *file to activate your bot.*\n\n💬 *Need help? Contact support:* \nhttps://wa.me/94715450089`;
+            const sid = `*✅ ANUWH MD MINE FREE BOT IS SUCCESSFULLY CONNECTED TO YOUR WHATSAPP NUMBER!*\n\n🔐 *Session ID:* \n👉 ${ANUWH-MD-string_session} 👈\n\n📌 *Please copy and paste this Session ID into your* \\config.js\\ *file to activate your bot.*\n\n💬 *Need help? Contact support:* \nhttps://wa.me/94710695082`;
 
             const mg = `⚠️ *Security Notice:*\n\n*Do NOT share this Session ID with anyone.*\n\n*මෙම කේතය කිසිවෙකුටත් ලබා නොදෙන්න. ඔබගේ ගිණුම සුරක්ෂිත විය යුතුය.*`;
 
-            const dt = await RobinPairWeb.sendMessage(user_jid, {
+            const dt = await Anuga-Senithu.sendMessage(user_jid, {
               image: {
-                url: "https://raw.githubusercontent.com/Mahii-Botz/Mahii-md-LOGO/refs/heads/main/ChatGPT%20Image%20Apr%2021%2C%202025%2C%2005_32_50%20PM.png",
+                url: "https://github.com/cyberxdevsofficial/Photos/blob/main/anuwhmd-logo",
               },
               caption: sid,
             });
 
-            const msg = await RobinPairWeb.sendMessage(user_jid, {
+            const msg = await Anuga-Senithu.sendMessage(user_jid, {
               text: string_session,
             });
 
-            const msg1 = await RobinPairWeb.sendMessage(user_jid, { text: mg });
+            const msg1 = await Anuga-Senithu.sendMessage(user_jid, { text: mg });
           } catch (e) {
             exec("pm2 restart prabath");
           }
@@ -116,11 +116,11 @@ router.get("/", async (req, res) => {
           lastDisconnect.error.output.statusCode !== 401
         ) {
           await delay(10000);
-          RobinPair();
+          AnugaSenithu();
         }
       });
     } catch (err) {
-      exec("pm2 restart Robin-md");
+      exec("pm2 restart Anuga-Senithu");
       console.log("service restarted");
       RobinPair();
       await removeFile("./session");
@@ -129,12 +129,13 @@ router.get("/", async (req, res) => {
       }
     }
   }
-  return await RobinPair();
+  return await AnugaSenithu();
 });
 
 process.on("uncaughtException", function (err) {
   console.log("Caught exception: " + err);
-  exec("pm2 restart Robin");
+  exec("pm2 restart Anuga-Senithu");
 });
 
 module.exports = router;
+
