@@ -18,13 +18,14 @@ module.exports = (sock) => {
         });
 
         const madeMenu = `
-╭─「 📜 ᴍᴇɴᴜ ᴏᴘᴛɪᴏɴꜱ 」 
+╭─「 📜 ANUWH MD 」 
 │ ⚙️ *MAIN COMMANDS*
 │   ➥ .menu
 │   ➥ .status
 │   ➥ .help
 │   *More features coming soon!*
 ╰──────────●●►
+> POWERED BY ANUGA SENITHU BY CyberX Devs TM
 `.trim();
 
         // Image + caption send කරමින් user message එක quote කරනවා
@@ -32,7 +33,7 @@ module.exports = (sock) => {
           mek.key.remoteJid,
           {
             image: {
-              url: "https://github.com/Mahii-Botz/Mahii-md-LOGO/blob/main/ChatGPT%20Image%20Apr%2021,%202025,%2005_32_50%20PM.png?raw=true",
+              url: "https://github.com/cyberxdevsofficial/Photos/blob/main/anuwhmd-logo",
             },
             caption: madeMenu,
           },
