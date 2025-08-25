@@ -65,7 +65,7 @@ module.exports = (sock) => {
       category: "ice kingdom",
       filename: __filename,
     },
-    async (robin, mek, m, { from, q, reply }) => {
+    async (anuga, mek, m, { from, q, reply }) => {
       try {
         if (!q) return reply("❌ GIVE ME THE VIDEO NAME OR URL");
 
